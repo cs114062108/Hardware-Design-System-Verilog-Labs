@@ -1,0 +1,10 @@
+# vscode configuration
+.vscode/
+
+# template code zip
+template_zips/
+*.zip
+
+# pratice spec pdf
+specs/
+*.pdf
