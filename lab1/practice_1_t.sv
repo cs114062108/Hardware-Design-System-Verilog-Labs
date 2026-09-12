@@ -29,7 +29,12 @@ module practice_1_t ();
     // TODO
     // Connect your practice_1 module here with "A", "B", "C", "out"
     // Please connect it by port name but not order
-
+    practice_1 p1(
+        .A(A),
+        .B(B),
+        .C(C),
+        .out(out)
+    );
 
     //====================================
 

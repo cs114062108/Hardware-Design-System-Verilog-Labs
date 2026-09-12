@@ -1,6 +1,16 @@
 # vscode configuration
 .vscode/
 
+# -- iverilog stuff --
+# .vvp files
+vvps/
+*.vvp
+
+# waveform .vcd files
+waves/
+*.vcd
+
+# -- Course stuff --
 # template code zip
 template_zips/
 *.zip
