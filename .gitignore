@@ -1,6 +1,9 @@
 # vscode configuration
 .vscode/
 
+# -- xvlog stuff --
+xvlog.*
+
 # -- iverilog stuff --
 # .vvp files
 vvps/
