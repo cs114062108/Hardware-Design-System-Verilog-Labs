@@ -11,6 +11,8 @@
 | <div align="center">gtkwave</div> |
 | ![lab1_1_gtk_1_0.png](waveforms/lab1/lab1_1_gtk_1_0.png) |
 | ![lab1_1_gtk_1_1.png](waveforms/lab1/lab1_1_gtk_1_1.png) |
+| <div align="center">Vivado</div> |
+| ![lab1_1_vvd_1.png](waveforms/lab1/lab1_1_vvd_1.png) |
 
 ### Pracitce 2
 | <div align="center">Diagram</div> |
@@ -21,3 +23,5 @@
 | --- |
 | <div align="center">gtkwave</div> |
 | ![lab1_2_gtk_1.png](waveforms/lab1/lab1_2_gtk_1.png) |
+| <div align="center">Vivado</div> |
+| ![lab1_2_vvd_1.png](waveforms/lab1/lab1_2_vvd_1.png) |

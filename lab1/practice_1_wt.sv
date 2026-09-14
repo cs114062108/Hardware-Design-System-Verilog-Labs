@@ -83,6 +83,7 @@ module practice_1_wt ();
         $display("===== Simulation finished ======");
 
         /* done simulating */
+        #10;
         $finish;
     end
 

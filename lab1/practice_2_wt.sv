@@ -88,6 +88,7 @@ module practice_2_wt();
             $write("\n");
         end
 
+        #10;
         $finish;
     end
 

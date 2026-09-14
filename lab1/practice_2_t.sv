@@ -24,6 +24,13 @@ module practice_2_t();
     integer error_count, i;
 
     initial begin
+
+        // Monitor
+        $display("-------------------------------");
+        $display("Time\t G D | P Pn | exP exPn");
+        $display("-------------------------------");
+        $monitor("%0dns\t %b %b | %b %b  |  %b   %b ", $time, G, D, P, Pn, expected_P, expected_Pn);
+
         error_count = 0;
         for (i = 0; i < LEN; i = i + 1) begin
             G = G_pattern[i];
@@ -41,6 +48,8 @@ module practice_2_t();
             #9;
         end
         
+        $display("-------------------------------");
+
         if (error_count === 0) $display("[SUCCESS]: All tests passed successfully!");
         else begin
             $display("[ERROR]: There were %0d errors.", error_count);
@@ -69,6 +78,8 @@ module practice_2_t();
             for (i = 1; i < LEN; i = i + 1) $write(" -> %b", golden_Pns[i]);
             $write("\n");
         end
+
+        #10;
         $finish;
     end
 

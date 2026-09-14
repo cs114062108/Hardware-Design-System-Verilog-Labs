@@ -74,6 +74,7 @@ module practice_1_t ();
         $display("===== Simulation finished ======");
 
         /* done simulating */
+        #10;
         $finish;
     end
 

@@ -1,8 +1,17 @@
 # vscode configuration
 .vscode/
 
-# -- xvlog stuff --
+# -- Vivado xvlog stuff --
+# xvlog
 xvlog.*
+
+# Vivado
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/
+*.xpr
 
 # -- iverilog stuff --
 # .vvp files
