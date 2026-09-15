@@ -1,6 +1,6 @@
 # Hardware Design Labs Practice
 
-## Lab 1
+## Lab1: Practices
 ### Practice 1
 | <div align="center">Diagram</div> |
 | --- |
@@ -25,3 +25,15 @@
 | ![lab1_2_gtk_1.png](waveforms/lab1/lab1_2_gtk_1.png) |
 | <div align="center">Vivado</div> |
 | ![lab1_2_vvd_1.png](waveforms/lab1/lab1_2_vvd_1.png) |
+
+## Lab1: Lab
+### Part 1
+| <div align="center">Diagram</div> |
+| --- |
+| <div align="center">Straight from lab (50/64)</div> |
+| ![lab1_lab_1_0.svg](diagrams/lab1_lab/lab1_lab_1_0.svg) |
+
+### Part 2
+| <div align="center">Diagram</div> |
+| --- |
+| ![lab1_lab_2_0.svg](diagrams/lab1_lab/lab1_lab_2_0.svg) |
