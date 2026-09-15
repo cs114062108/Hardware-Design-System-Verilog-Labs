@@ -32,8 +32,21 @@
 | --- |
 | <div align="center">Straight from lab (50/64)</div> |
 | ![lab1_lab_1_0.svg](diagrams/lab1_lab/lab1_lab_1_0.svg) |
+| <div align="center">Corrected the index of MSB and LSB (64/64)</div> |
+| ![lab1_lab_1_1.svg](diagrams/lab1_lab/lab1_lab_1_1.svg) |
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">Straight from lab (50/64)</div> |
+| ![lab1_lab_1_vvd_0.png](waveforms/lab1_lab/lab1_lab_1_vvd_0.png) |
+| <div align="center">Corrected the index of MSB and LSB (64/64)</div> |
+| ![lab1_lab_1_vvd_1.png](waveforms/lab1_lab/lab1_lab_1_vvd_1.png) |
 
 ### Part 2
 | <div align="center">Diagram</div> |
 | --- |
 | ![lab1_lab_2_0.svg](diagrams/lab1_lab/lab1_lab_2_0.svg) |
+
+| <div align="center">Waveform</div> |
+| --- |
+| ![lab1_lab_2_vvd_0.png](waveforms/lab1_lab/lab1_lab_2_vvd_0.png) |

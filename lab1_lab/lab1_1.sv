@@ -8,35 +8,40 @@ module lab1_1 (
 
     // Write your code here
     // ------------------------------------------------------
-    // ALUOp[0] selects AND_OR or ADD_SUB, use in final mux
-    // ALUOp[1] selects AND or OR, ADD or SUB, use in mux ao, b_invert, adder cin
+    // ALUOp[1] (MSB) selects AND_OR or ADD_SUB, use in final mux
+    // ALUOp[0] (LSB) selects AND or OR, ADD or SUB, use in mux ao, b_invert, adder cin
     // ------------------------------------------------------
 
     // Perform AND operation and OR operation
     wire [1:0] a_and_b, a_or_b;
-    and a_ab_0(a_and_b[0], a[0], b[0]);
     and a_ab_1(a_and_b[1], a[1], b[1]);
+    and a_ab_0(a_and_b[0], a[0], b[0]);
+    // and a_ab[1:0](a_and_b, a, b); // array of instances
 
-    or  o_ab_0(a_or_b[0], a[0], b[0]);
     or  o_ab_1(a_or_b[1], a[1], b[1]);
+    or  o_ab_0(a_or_b[0], a[0], b[0]);
+    // or  o_ab[1:0](a_or_b, a, b); // array of instances
 
-    // Select AND or OR by ALUOp[1]
+    // Select AND or OR by ALUOp[0] (LSB)
     wire [1:0] and_or;
-    mux ao_0(.a(a_and_b[0]), .b(a_or_b[0]), .sel(ALUOp[1]), .y(and_or[0]));
-    mux ao_1(.a(a_and_b[1]), .b(a_or_b[1]), .sel(ALUOp[1]), .y(and_or[1]));
+    mux ao_1(.a(a_and_b[1]), .b(a_or_b[1]), .sel(ALUOp[0]), .y(and_or[1]));
+    mux ao_0(.a(a_and_b[0]), .b(a_or_b[0]), .sel(ALUOp[0]), .y(and_or[0]));
+    // mux ao[1:0](.a(a_and_b), .b(a_or_b), .sel({2{ALUOp[0]}}), .y(and_or)); // array of instances
 
-    // Invert b by ALUOp[1]
+    // Invert b by ALUOp[0] (LSB)
     wire [1:0] b_invert;
-    xor x_b_0(b_invert[0], b[0], ALUOp[1]);
-    xor x_b_1(b_invert[1], b[1], ALUOp[1]);
+    xor x_b_1(b_invert[1], b[1], ALUOp[0]);
+    xor x_b_0(b_invert[0], b[0], ALUOp[0]);
+    // xor x_b[1:0](b_invert, b, {2{ALUOp[0]}}); // array of instances
 
-    // Perform ADD or SUB
+    // Perform ADD or SUB, select by ALUOp[0] (LSB)
     wire [1:0] a_add_b;
-    adder add(.a(a), .b(b_invert), .cin(ALUOp[1]), .sum(a_add_b));
+    adder add(.a(a), .b(b_invert), .cin(ALUOp[0]), .sum(a_add_b));
 
-    // Finalize
-    mux final_0(.a(and_or[0]), .b(a_add_b[0]), .sel(ALUOp[0]), .y(result[0]));
-    mux final_1(.a(and_or[1]), .b(a_add_b[1]), .sel(ALUOp[0]), .y(result[1]));
+    // Finalize, select by ALUOp[1] (MSB)
+    mux final_1(.a(and_or[1]), .b(a_add_b[1]), .sel(ALUOp[1]), .y(result[1]));
+    mux final_0(.a(and_or[0]), .b(a_add_b[0]), .sel(ALUOp[1]), .y(result[0]));
+    // mux final_mux[1:0](.a(and_or), .b(a_add_b), .sel({2{ALUOp[1]}}), .y(result)); // array of instances
 
 endmodule
 
