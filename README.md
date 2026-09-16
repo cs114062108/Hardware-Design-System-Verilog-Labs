@@ -1,5 +1,10 @@
 # Hardware Design Labs Practice
 
+## Lab0: FPGA Board Test
+| <div align="center">Waveform</div> |
+| --- |
+| ![lab0_vvd_0.png](waveforms/lab0/lab0_vvd_0.png) |
+
 ## Lab1: Practices
 ### Practice 1
 | <div align="center">Diagram</div> |

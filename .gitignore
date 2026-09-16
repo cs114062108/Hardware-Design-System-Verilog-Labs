@@ -30,3 +30,10 @@ template_zips/
 # pratice spec pdf
 specs/
 *.pdf
+
+# lab0
+lab0_src/
+
+# bit stream
+bits/
+*.bit
