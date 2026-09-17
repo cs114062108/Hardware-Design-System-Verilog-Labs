@@ -63,6 +63,7 @@ module lab2_1_practice_tb;
         pattern_file = $fopen("pattern_A_practice.dat", "r");
         if (pattern_file == 0)
             $fatal(1, "Lab 2 Practice 1: FAIL (cannot open pattern_A_practice.dat; add it as a simulation source with Copy sources into project)");
+            
         $fclose(pattern_file);
         for (pattern_index = 0; pattern_index < PATTERN_NUM; pattern_index++)
             patterns[pattern_index] = 'x;

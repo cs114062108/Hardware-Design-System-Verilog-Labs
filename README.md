@@ -55,3 +55,18 @@
 | <div align="center">Waveform</div> |
 | --- |
 | ![lab1_lab_2_vvd_0.png](waveforms/lab1_lab/lab1_lab_2_vvd_0.png) |
+
+## Lab2: Practice
+### Part 1
+| <div align="center">Diagram</div> |
+| --- |
+| ![pra2_1_0.svg](diagrams/lab2_pra/pra2_1_0.svg) |
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| ![pra2_1_gtk_0.png](waveforms/lab2_pra/pra2_1_gtk_0.png) |
+| <div align="center">Vivado</div> |
+| ![pra2_1_vvd_0.png](waveforms/lab2_pra/pra2_1_vvd_0.png) |
+
+### Part 2
