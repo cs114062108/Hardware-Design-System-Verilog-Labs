@@ -61,6 +61,7 @@
 | <div align="center">Diagram</div> |
 | --- |
 | ![pra2_1_0.svg](diagrams/lab2_pra/pra2_1_0.svg) |
+| ![pra2_1_1.svg](diagrams/lab2_pra/pra2_1_1.svg) |
 
 | <div align="center">Waveform</div> |
 | --- |
