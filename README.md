@@ -71,3 +71,8 @@
 | ![pra2_1_vvd_0.png](waveforms/lab2_pra/pra2_1_vvd_0.png) |
 
 ### Part 2
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| ![pra2_2_gtk_0.png](waveforms/lab2_pra/pra2_2_gtk_0.png) |
+| <div align="center">Vivado</div> |
