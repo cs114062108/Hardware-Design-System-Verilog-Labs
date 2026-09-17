@@ -71,8 +71,16 @@
 | ![pra2_1_vvd_0.png](waveforms/lab2_pra/pra2_1_vvd_0.png) |
 
 ### Part 2
+| <div align="center">Diagram</div> |
+| --- |
+| <div align="center">Schematic</div> |
+| ![pra2_2_0.svg](diagrams/lab2_pra/pra2_2_0.svg) |
+| <div align="center">State Graph</div> |
+| ![pra2_2_fsm_0.svg](diagrams/lab2_pra/pra2_2_fsm_0.svg) |
+
 | <div align="center">Waveform</div> |
 | --- |
 | <div align="center">gtkwave</div> |
 | ![pra2_2_gtk_0.png](waveforms/lab2_pra/pra2_2_gtk_0.png) |
 | <div align="center">Vivado</div> |
+| ![pra2_2_vvd_0.png](waveforms/lab2_pra/pra2_2_vvd_0.png) |
