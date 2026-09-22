@@ -101,9 +101,19 @@
 | <div align="center">Diagram</div> |
 | --- |
 | <div align="center">Schematic</div> |
-| [![lab2_2_0.svg](diagrams/lab2_lab/lab2_2_0.svg)](lab2/lab2_1.sv) |
+| <div align="center">Straight from lab (39/40)</div> |
+| [![lab2_2_0.svg](diagrams/lab2_lab/lab2_2_0.svg)](lab2/lab2_2.sv) |
+| <div align="center">Corrected (40/40)</div> |
+| [![lab2_2_1.svg](diagrams/lab2_lab/lab2_2_1.svg)](lab2/lab2_2.sv) |
+| <div align="center">FSM State Graph</div> |
+| <div align="center">Straight from lab (39/40)</div> |
+| [![lab2_2_fsm_0.svg](diagrams/lab2_lab/lab2_2_fsm_0.svg)](lab2/lab2_2.sv) |
+| <div align="center">Corrected (40/40)</div> |
+| [![lab2_2_fsm_1.svg](diagrams/lab2_lab/lab2_2_fsm_1.svg)](lab2/lab2_2.sv) |
 
 | <div align="center">Waveform</div> |
 | --- |
-| <div align="center">Vivado</div> |
-| [![lab2_2_vvd_0.png](waveforms/lab2_lab/lab2_2_vvd_0.png)](lab2/lab2_1_t.sv) |
+| <div align="center">Straight from lab (39/40)</div> |
+| [![lab2_2_vvd_0.png](waveforms/lab2_lab/lab2_2_vvd_0.png)](lab2/lab2_2_t.sv) |
+| <div align="center">Corrected (40/40)</div> |
+| [![lab2_2_vvd_1.png](waveforms/lab2_lab/lab2_2_vvd_1.png)](lab2/lab2_2_t.sv) |

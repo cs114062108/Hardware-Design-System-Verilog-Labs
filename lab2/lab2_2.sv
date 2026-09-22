@@ -43,14 +43,16 @@ module lab2_2 (
             end
 
             DONE: begin
-                /*
+                // ------------------------------------
+                // Corrected (40/40)
+                // ------------------------------------
                 if (load == 1'b1 && N == 8'd0) begin
                     next_state = DONE;
                 end else begin
                     next_state = IDLE;
                 end
-                */
-                next_state = IDLE; // straight from lab (39/40)
+                // ------------------------------------
+                // next_state = IDLE; // straight from lab (39/40)
             end
 
             default: begin
