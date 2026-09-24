@@ -48,6 +48,12 @@ mod_pra2_2 = lab2_2_practice.sv
 src_pra2_2 = $(mod_pra2_2) lab2_2_practice_ivt.sv
 vpra2_2 = $(patsubst %, $(pra2_dir)/%, $(src_pra2_2))
 
+adv2_dir = adv2
+mod_adv2 = lab2_adv_1.sv
+tb_adv2 = lab2_adv_1_t.sv
+src_adv2 = $(mod_adv2) $(tb_adv2)
+vadv2 = $(patsubst %, $(adv2_dir)/%, $(src_adv2))
+
 # .vvp requirements
 vvp1_1 = $(vvpdir)/lab1_1.vvp
 $(vvp1_1): $(v1_1)
@@ -73,8 +79,11 @@ $(vvp_pra2_1_m1): $(vpra2_1_m1)
 vvp_pra2_2 = $(vvpdir)/pra2_2.vvp
 $(vvp_pra2_2): $(vpra2_2)
 
+vvp_adv2 = $(vvpdir)/adv2.vvp
+$(vvp_adv2): $(vadv2)
+
 # --- Targets ---
-.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2
+.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2
 
 lb1_1: lb1_1_com lb1_1_sim
 lb1_1_com: $(vvp1_1)
@@ -111,6 +120,10 @@ pra2_1_m1_sim: run-pra2_1_m1
 pra2_2: pra2_2_com pra2_2_sim
 pra2_2_com: $(vvp_pra2_2)
 pra2_2_sim: run-pra2_2
+
+adv2: adv2_com adv2_sim
+adv2_com: $(vvp_adv2)
+adv2_sim: run-adv2
 
 # -- Universal make logic --
 # Compile pattern rule

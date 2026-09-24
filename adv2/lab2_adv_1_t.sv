@@ -105,7 +105,7 @@ module lab2_adv_1_tb;
 
     always @(posedge clk) begin
         #1ns;
-        $display("t=%0t rst=%b values={%0d,%0d,%0d,%0d} target=%0d out=%b exact=%b",
+        $display("t=%0dns\t rst=%b\t values={%0d,%0d,%0d,%0d}\t target=%0d\t out=%b\t exact=%b",
                  $time, rst, val_1, val_2, val_3, val_4, target, out, exact);
     end
 
