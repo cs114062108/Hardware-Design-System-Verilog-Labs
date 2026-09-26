@@ -117,3 +117,9 @@
 | [![lab2_2_vvd_0.png](waveforms/lab2_lab/lab2_2_vvd_0.png)](lab2/lab2_2_t.sv) |
 | <div align="center">Corrected (40/40)</div> |
 | [![lab2_2_vvd_1.png](waveforms/lab2_lab/lab2_2_vvd_1.png)](lab2/lab2_2_t.sv) |
+
+## Lab2: Advance
+| <div align="center">Diagram</div> |
+| --- |
+| [![adv2_1_0.svg](diagrams/lab2_adv/adv2_1_0.svg)](adv2/lab2_adv_1.sv) |
+| [![enum_subset_unreadable_0.svg](diagrams/lab2_adv/enum_subset_unreadable_0.svg)](adv2/enum_subset.sv) |

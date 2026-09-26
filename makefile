@@ -49,8 +49,8 @@ src_pra2_2 = $(mod_pra2_2) lab2_2_practice_ivt.sv
 vpra2_2 = $(patsubst %, $(pra2_dir)/%, $(src_pra2_2))
 
 adv2_dir = adv2
-mod_adv2 = lab2_adv_1.sv
-tb_adv2 = lab2_adv_1_t.sv
+mod_adv2 = lab2_adv_1.sv enum_subset.sv
+tb_adv2 = lab2_adv_1_ivt.sv
 src_adv2 = $(mod_adv2) $(tb_adv2)
 vadv2 = $(patsubst %, $(adv2_dir)/%, $(src_adv2))
 

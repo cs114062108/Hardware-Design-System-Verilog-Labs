@@ -29,28 +29,13 @@ module lab2_adv_1 (
     // -----------------------------------------
     // Combinational: Enumerate all 16 subsets
     // -----------------------------------------
+    reg [5:0] best_sum;
+    reg [3:0] best_mask;
+
+    EnumSubset enum_sub(.val_0(vals[0]), .val_1(vals[1]), .val_2(vals[2]), .val_3(vals[3]),
+                        .target(target), .best_sum(best_sum), .best_mask(best_mask));
+
     always_comb begin : EnumSubset
-        // Local logic variables
-        reg [5:0] sum;
-        reg [5:0] best_sum;
-        reg [3:0] mask;
-        reg [3:0] best_mask;
-
-        best_sum  = 6'd0;
-        best_mask = 4'b0000;
-
-        for (int i = 0; i < 16; i++) begin
-            sum = 6'd0;
-            mask = i[3:0];
-            for (int j = 0; j < 4; j++) begin
-                if (i[j]) sum = sum + vals[j];   // i[j] reads bit j of the loop index directly
-            end
-            if (sum <= target && sum > best_sum) begin
-                best_sum  = sum;
-                best_mask = mask;
-            end
-        end
-
         next_out   = best_mask;
         next_exact = (best_sum == target);
     end
