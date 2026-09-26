@@ -32,10 +32,12 @@ module lab2_adv_1 (
     reg [5:0] best_sum;
     reg [3:0] best_mask;
 
-    EnumSubset enum_sub(.val_0(vals[0]), .val_1(vals[1]), .val_2(vals[2]), .val_3(vals[3]),
-                        .target(target), .best_sum(best_sum), .best_mask(best_mask));
+    EnumSubset enum_sub(
+        .val_0(vals[0]), .val_1(vals[1]), .val_2(vals[2]), .val_3(vals[3]),
+        .target(target), .best_sum(best_sum), .best_mask(best_mask)
+    );
 
-    always_comb begin : EnumSubset
+    always_comb begin : EnumerateSubset
         next_out   = best_mask;
         next_exact = (best_sum == target);
     end

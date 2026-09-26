@@ -37,3 +37,6 @@ lab0_src/
 # bit stream
 bits/
 *.bit
+
+# test
+adv2/mask_adder.sv
