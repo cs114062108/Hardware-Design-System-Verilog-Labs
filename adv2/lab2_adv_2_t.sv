@@ -149,12 +149,13 @@ module lab2_adv_2_tb;
         end
 
         $display("-------------------------------------------------------");
-        $display("   Result: (%0d/%0d), %0d errors detected", pass_cnt, test_cnt, err_cnt);
-        $display("-------------------------------------------------------");
 
         @(negedge clk);
         @(posedge clk);
         #20;
+        $display("-------------------------------------------------------");
+        $display("   Result: (%0d/%0d), %0d errors detected", pass_cnt, test_cnt, err_cnt);
+        $display("-------------------------------------------------------");
         $finish;
     end
 

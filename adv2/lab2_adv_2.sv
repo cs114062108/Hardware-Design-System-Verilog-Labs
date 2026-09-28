@@ -13,52 +13,21 @@ module lab2_adv_2 (
 
     // Implement your design here.
 
-    // --------------------------------
-    // Define input types
-    // --------------------------------
-    localparam VAL12 = 2'b00; // Load val_1 from SW7–SW4 and val_2 from SW3–SW0
-    localparam VAL34 = 2'b01; // Load val_3 from SW7–SW4 and val_4 from SW3–SW0
-    localparam TGT   = 2'b10; // Load target from SW5–SW0
-    localparam LATCH = 2'b11; // Reserved — load nothing (latch everything)
+    // ---------------------------------------------------------
+    // Read Switches: Synchronous read and asynchronous reset
+    // ---------------------------------------------------------
+    logic [3:0] val_1;  // 2'b00 (VAL12) : SW7-SW4
+    logic [3:0] val_2;  // 2'b00 (VAL12) : SW3-SW0
+    logic [3:0] val_3;  // 2'b01 (VAL34) : SW7-SW4
+    logic [3:0] val_4;  // 2'b01 (VAL34) : SW3-SW0
+    logic [5:0] target; // 2'b01 (TGT)   : SW5-SW0
 
-    // ----------------------------------------------------------------------
-    // Registers: Stores the inputs
-    //            Loaded from switches when valid=1 at rising edge
-    //            rst is asynchronous here, must be in the sensitivity list
-    // ----------------------------------------------------------------------
-    reg [3:0] val_1;  // 2'b00 (VAL12) : SW7-SW4
-    reg [3:0] val_2;  // 2'b00 (VAL12) : SW3-SW0
-    reg [3:0] val_3;  // 2'b01 (VAL34) : SW7-SW4
-    reg [3:0] val_4;  // 2'b01 (VAL34) : SW3-SW0
-    reg [5:0] target; // 2'b01 (TGT)   : SW5-SW0
-
-    always_ff @(posedge clk or posedge rst) begin : InputRegister
-        if (rst) begin
-            val_1  <= 4'd0;
-            val_2  <= 4'd0;
-            val_3  <= 4'd0;
-            val_4  <= 4'd0;
-            target <= 6'd0;
-        end else if (valid) begin
-            case (switch_inputtype)
-                VAL12: begin
-                    val_1 <= switch_input[7:4];
-                    val_2 <= switch_input[3:0];
-                end
-
-                VAL34: begin
-                    val_3 <= switch_input[7:4];
-                    val_4 <= switch_input[3:0];
-                end
-
-                TGT: begin
-                    target <= switch_input[5:0];
-                end
-
-                default: ;  // 2'b11 (LATCH): Reserved — load nothing (latch everything)
-            endcase
-        end
-    end
+    SwitchReader switch_read(
+        .clk(clk), .rst(rst),
+        .switch_input(switch_input), .switch_inputtype(switch_inputtype),
+        .valid(valid),
+        .v_1(val_1), .v_2(val_2), .v_3(val_3), .v_4(val_4), .tgt(target)
+    );
 
     // -----------------------
     // Values

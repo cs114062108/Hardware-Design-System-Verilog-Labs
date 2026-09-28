@@ -125,7 +125,16 @@
 | [![adv2_1_0.svg](diagrams/lab2_adv/adv2_1_0.svg)](adv2/lab2_adv_1.sv) |
 | [![enum_subset_unreadable_0.svg](diagrams/lab2_adv/enum_subset_unreadable_0.svg)](adv2/enum_subset.sv) |
 
+| <div align="center">Waveform</div> |
+| --- |
+| [![lab2_adv_1_vvd_0.png](waveforms/lab2_adv/lab2_adv_1_vvd_0.png)](adv2/lab2_adv_1_t.sv) |
+
 ### Part 2
 | <div align="center">Diagram</div> |
 | --- |
-| [![adv2_2_0.svg](diagrams/lab2_adv/adv2_2_0.svg)](adv2/lab2_adv_2.sv) |
+| [![adv2_2_1.svg](diagrams/lab2_adv/adv2_2_1.svg)](adv2/lab2_adv_2.sv) |
+| [![switch_reader_0.svg](diagrams/lab2_adv/switch_reader_0.svg)](adv2/switch_reader.sv) |
+
+| <div align="center">Waveform</div> |
+| --- |
+| [![lab2_adv_2_vvd_0.png](waveforms/lab2_adv/lab2_adv_2_vvd_0.png)](adv2/lab2_adv_2_t.sv) |

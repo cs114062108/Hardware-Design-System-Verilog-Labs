@@ -55,7 +55,7 @@ tb_adv2 = lab2_adv_1_ivt.sv
 src_adv2 = $(mod_adv2) $(tb_adv2)
 vadv2 = $(patsubst %, $(adv2_dir)/%, $(src_adv2))
 
-mod_adv2_2 = lab2_adv_2.sv enum_subset.sv
+mod_adv2_2 = lab2_adv_2.sv enum_subset.sv switch_reader.sv
 tb_adv2_2 = lab2_adv_2_t.sv
 src_adv2_2 = $(mod_adv2_2) $(tb_adv2_2)
 vadv2_2 = $(patsubst %, $(adv2_dir)/%, $(src_adv2_2))
