@@ -13,10 +13,10 @@ module lab2_adv_1_tb;
     logic exact;
     logic [3:0] out;
 
-    logic [3:0] test_val_1 [0:7];
-    logic [3:0] test_val_2 [0:7];
-    logic [3:0] test_val_3 [0:7];
-    logic [3:0] test_val_4 [0:7];
+    logic [3:0] test_val_1  [0:7];
+    logic [3:0] test_val_2  [0:7];
+    logic [3:0] test_val_3  [0:7];
+    logic [3:0] test_val_4  [0:7];
     logic [5:0] test_target [0:7];
     int unsigned test_index;
 
@@ -31,6 +31,12 @@ module lab2_adv_1_tb;
         .exact(exact),
         .out(out)
     );
+
+    // Expected results, computed by hand for each test vector above
+    // (best-fit over the 16 subsets; ties are broken by keeping the
+    // smallest/first-enumerated mask).
+    logic [3:0] ans_mask  [0:7];
+    logic       ans_exact [0:7];
 
     logic [3:0] exp_mask;
     logic       exp_exact;
@@ -64,38 +70,63 @@ module lab2_adv_1_tb;
     end
 
     initial begin
+        // Testcase 0
         test_val_1[0] = 4'd3;  test_val_2[0] = 4'd5;
         test_val_3[0] = 4'd9;  test_val_4[0] = 4'd11;
         test_target[0] = 6'd14;
 
+        ans_mask[0] = 4'b0110;  ans_exact[0] = 1'b1;  // v2+v3 = 14
+
+        // Testcase 1
         test_val_1[1] = 4'd3;  test_val_2[1] = 4'd5;
         test_val_3[1] = 4'd9;  test_val_4[1] = 4'd11;
         test_target[1] = 6'd0;
 
+        ans_mask[1] = 4'b0000;  ans_exact[1] = 1'b1;  // target = 0, empty subset
+
+        // Testcase 2
         test_val_1[2] = 4'd2;  test_val_2[2] = 4'd4;
         test_val_3[2] = 4'd6;  test_val_4[2] = 4'd8;
         test_target[2] = 6'd5;
 
+        ans_mask[2] = 4'b0010;  ans_exact[2] = 1'b0;  // best <=5 is v2 = 4
+
+        // Testcase 3
         test_val_1[3] = 4'd1;  test_val_2[3] = 4'd2;
         test_val_3[3] = 4'd3;  test_val_4[3] = 4'd4;
         test_target[3] = 6'd63;
 
+        ans_mask[3] = 4'b1111;  ans_exact[3] = 1'b0;  // target exceeds max possible sum (10)
+
+        // Testcase 4
         test_val_1[4] = 4'd7;  test_val_2[4] = 4'd7;
         test_val_3[4] = 4'd7;  test_val_4[4] = 4'd7;
         test_target[4] = 6'd14;
 
+        ans_mask[4] = 4'b0011;  ans_exact[4] = 1'b1;  // v1+v2 = 14, first among several ties
+
+        // Testcase 5
         test_val_1[5] = 4'd15; test_val_2[5] = 4'd15;
         test_val_3[5] = 4'd1;  test_val_4[5] = 4'd1;
         test_target[5] = 6'd16;
 
+        ans_mask[5] = 4'b0101;  ans_exact[5] = 1'b1;  // v1+v3 = 16, first among several ties
+
+        // Testcase 6
         test_val_1[6] = 4'd0;  test_val_2[6] = 4'd0;
         test_val_3[6] = 4'd0;  test_val_4[6] = 4'd0;
         test_target[6] = 6'd0;
 
+        ans_mask[6] = 4'b0000;  ans_exact[6] = 1'b1;  // all zero, target = 0
+
+        // Testcase 7
         test_val_1[7] = 4'd4;  test_val_2[7] = 4'd6;
         test_val_3[7] = 4'd8;  test_val_4[7] = 4'd10;
         test_target[7] = 6'd13;
 
+        ans_mask[7] = 4'b0101;  ans_exact[7] = 1'b0;  // best <=13 is v1+v3 = 12
+
+        // Init
         val_1 = 4'd0;
         val_2 = 4'd0;
         val_3 = 4'd0;
@@ -110,18 +141,25 @@ module lab2_adv_1_tb;
         // 35 ns. Each later set is applied at the next falling edge.
         #35ns;
         for (test_index = 0; test_index < test_cnt; test_index = test_index + 1) begin
+            // test inputs
             val_1 = test_val_1[test_index];
             val_2 = test_val_2[test_index];
             val_3 = test_val_3[test_index];
             val_4 = test_val_4[test_index];
             target = test_target[test_index];
 
+            // expected outputs
+            exp_mask = ans_mask[test_index];
+            exp_exact = ans_exact[test_index];
+
             @(posedge clk);
             #1ns;
             // TODO: Implement your expected-result checks here, after the sampled rising edge.
+            /*
             expected_result(test_val_1[test_index], test_val_2[test_index],
                             test_val_3[test_index], test_val_4[test_index],
                             test_target[test_index], exp_mask, exp_exact);
+            */
 
             if (out !== exp_mask || exact !== exp_exact) begin
                 $display("[FAIL] t=%0d idx=%0d: out=%b(exp %b) exact=%b(exp %b)",
@@ -156,6 +194,7 @@ module lab2_adv_1_tb;
 
 endmodule
 
+/*
 // Reference model: independently recompute the best-fit mask/sum/exact
 // for one test vector, used to check against the DUT's registered outputs.
 function automatic void expected_result(
@@ -183,3 +222,4 @@ function automatic void expected_result(
     exp_mask  = best_mask;
     exp_exact = (best_sum == tgt);
 endfunction
+*/
