@@ -158,10 +158,17 @@ module lab2_adv_3 (
                     dis_val4 = best_sum[3:0];
                 end
 
-                dis_dot1 = best_mask[3];
-                dis_dot2 = best_mask[2];
-                dis_dot3 = best_mask[1];
-                dis_dot4 = best_mask[0];
+                if (preview) begin
+                    dis_dot1 = best_mask[3];
+                    dis_dot2 = best_mask[2];
+                    dis_dot3 = best_mask[1];
+                    dis_dot4 = best_mask[0];
+                end else begin
+                    dis_dot1 = 1'b0;
+                    dis_dot2 = 1'b0;
+                    dis_dot3 = 1'b1;
+                    dis_dot4 = 1'b1;
+                end
             end
 
             default: begin
