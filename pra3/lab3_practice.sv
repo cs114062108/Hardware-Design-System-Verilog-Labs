@@ -20,11 +20,11 @@ module lab3_practice (
     localparam PLAY  = 2'b10;
     localparam FINAL = 2'b11;
 
-    logic [3:0] state;
-    logic [3:0] next_state;
+    logic [1:0] state;
+    logic [1:0] next_state;
 
     // --------------------------------------------
-    // Divided clocks
+    // Divided clocks & timers
     // --------------------------------------------
     logic slow_clk, fast_clk;
 
@@ -34,7 +34,12 @@ module lab3_practice (
     logic load_timer;    // 4 Hz
     logic is_load;
     assign is_load = (state == LOAD);
-    timer #(.COUNT(25_000_000)) load_time(.clk(clk), .rst(rst), .enable(is_load), .tick(load_timer));  // 100 MHz to 4 Hz
+    timer #(.COUNT(25_000_000)) load_time(.clk(clk), .rst(rst), .enable(is_load), .tick(load_timer));    // 100 MHz to 4 Hz
+
+    logic final_timer;   // 2 HZ
+    logic is_final;
+    assign is_final = (state == FINAL);
+    timer #(.COUNT(50_000_000)) final_time(.clk(clk), .rst(rst), .enable(is_final), .tick(final_timer)); // 100 MHz to 2 Hz
 
     // --------------------------------------------
     // Led load
@@ -43,6 +48,14 @@ module lab3_practice (
     logic end_load;
 
     LOAD_led led_load(.clk(clk), .rst(rst), .timer(load_timer), .is_load(is_load), .loaded(end_load), .load_led(load_led));
+
+    // --------------------------------------------
+    // Led final
+    // --------------------------------------------
+    logic [15:0] final_led;
+    logic end_final;
+
+    FINAL_led led_final(.clk(clk), .rst(rst), .timer(final_timer), .is_final(is_final), .end_final(end_final), .final_led(final_led));
 
     // --------------------------------------------
     // Led play
@@ -100,8 +113,12 @@ module lab3_practice (
             end
 
             FINAL: begin
-                led = 16'hffff;
-                next_state = INIT;
+                led = final_led;
+                if (end_final) begin
+                    next_state = INIT;
+                end else begin
+                    next_state = FINAL;
+                end
             end
 
             default: begin
@@ -139,7 +156,13 @@ module LOAD_led (
         end
     end
 
-    always_ff @(posedge clk or posedge rst) begin: Load_led
+    always_comb begin
+        for (int i = 0; i < 16; i++) begin
+            load_led[i] = led_cnt >= i+1;
+        end
+    end
+
+    always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             loaded <= 1'b0;
             led_cnt <= 5'd0;
@@ -152,9 +175,47 @@ module LOAD_led (
         end
     end
 
+endmodule
+
+module FINAL_led (
+    input logic clk,
+    input logic rst,
+    input logic timer,
+    input logic is_final,
+    output logic end_final,
+    output logic [15:0] final_led
+);
+    
+    // --------------------------------------------
+    // Led final
+    // --------------------------------------------
+    logic next_ended;
+    logic [2:0] flash_cnt;
+    logic [2:0] next_flash_cnt;
+
     always_comb begin
-        for (int i = 0; i < 16; i++) begin
-            load_led[i] = led_cnt >= i+1;
+        if (is_final) begin
+            next_ended = next_flash_cnt == 3'd6;
+            next_flash_cnt = (flash_cnt < 3'd6) ? flash_cnt + 1'b1 : 3'd6;
+        end else begin
+            next_ended = 1'b0;
+            next_flash_cnt = 3'd0;
+        end
+    end
+
+    // cnt even (0,2,4) -> ON phase; cnt odd (1,3,5) -> OFF phase
+    assign final_led = flash_cnt[0] ? 16'h0000 : 16'hffff;
+
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            end_final <= 1'b0;
+            flash_cnt <= 2'd0;
+        end else if (timer) begin
+            end_final <= next_ended;
+            flash_cnt <= next_flash_cnt;
+        end else if (!is_final) begin
+            end_final <= 1'b0;
+            flash_cnt <= 2'd0;
         end
     end
 

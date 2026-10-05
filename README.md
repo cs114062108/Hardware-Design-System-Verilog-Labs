@@ -138,3 +138,17 @@
 | <div align="center">Waveform</div> |
 | --- |
 | [![lab2_adv_2_vvd_0.png](waveforms/lab2_adv/lab2_adv_2_vvd_0.png)](adv2/lab2_adv_2_t.sv) |
+
+## Lab3: Practice
+### Part 3
+| <div align="center">Diagram</div> |
+| --- |
+| <div align="center">State Diagram</div> |
+| [![lab3_pra_fsm0.svg](diagrams/lab3_pra/lab3_pra_fsm0.svg)](pra3/lab3_practice.sv) |
+| <div align="center">Schematic Diagram</div> |
+| [![lab3_pra0.svg](diagrams/lab3_pra/lab3_pra0.svg)](pra3/lab3_practice.sv) |
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">Utils</div> |
+| [![lab3_utils_0.png](waveforms/lab3_pra/lab3_utils_0.png)](pra3/pra3_utils_tb0.sv) |
