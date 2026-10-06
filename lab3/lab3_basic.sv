@@ -36,13 +36,17 @@ module lab3_basic (
     );
 
     logic fin_clk;
+    logic is_fin;
+    assign is_fin = state == FINISH;
+    logic fin_rst;
+    assign fin_rst = rst || !is_fin;
 
     clock_divider #(
         .n(27)
     ) clock_finish (
         .clk(clk),
-        .rst(rst),
-        .enable(1'b1),
+        .rst(fin_rst),
+        .enable(is_fin),
         .clk_div(fin_clk)
     );
 
@@ -56,8 +60,8 @@ module lab3_basic (
 
     assign seperator = state == PLAY;
 
-    logic [1:0] cnt;
-    logic [1:0] next_cnt;
+    logic [2:0] cnt;
+    logic [2:0] next_cnt;
 
     always_comb begin
         case (cnt)
@@ -79,17 +83,15 @@ module lab3_basic (
     always_comb begin
         if (state == PLAY) begin
             next_runner_cnt = (runner_cnt < 4'd11) ? runner_cnt + 1'b1 : 4'd0;
-            next_cnt = (next_runner_cnt == 4'd11) ? cnt + 1'b1 : cnt;
-            if (cnt < 2'd3) begin
-                next_cnt = (next_runner_cnt == 4'd11) ? cnt + 1'b1 : cnt;
-                //next_cnt = (runner_cnt == 4'd11) ? cnt + 1'b1 : cnt;
+            if (cnt < 3'd4) begin
+                next_cnt = (runner_cnt == 4'd11) ? cnt + 1'b1 : cnt;
             end else begin
-                next_cnt = 2'd3;
+                next_cnt = 3'd4;
             end
-            next_end_play = (cnt == 2'd3);
+            next_end_play = (next_cnt == 3'd4);
         end else begin
             next_runner_cnt = 4'd0;
-            next_cnt = 2'd0;
+            next_cnt = 3'd0;
             next_end_play = 1'b0;
         end
     end
@@ -103,7 +105,7 @@ module lab3_basic (
     always_ff @(posedge clk, posedge rst) begin
         if (rst) begin
             runner_cnt <= 4'd0;
-            cnt <= 2'd0;
+            cnt <= 3'd0;
             end_play <= 1'b0;
         end else if (runner_timer) begin
             runner_cnt <= next_runner_cnt;
@@ -111,7 +113,7 @@ module lab3_basic (
             end_play <= next_end_play;
         end else if (state != PLAY) begin
             runner_cnt <= 4'd0;
-            cnt <= 2'd0;
+            cnt <= 3'd0;
             end_play <= 1'b0;
         end
     end
@@ -139,8 +141,8 @@ module lab3_basic (
         end
     end
 
-    always_ff @(posedge fin_clk, posedge rst) begin
-        if (rst) begin
+    always_ff @(posedge fin_clk, posedge fin_rst) begin
+        if (fin_rst) begin
             flash_cnt <= 3'd0;
             end_fin <= 1'b0;
         end else if (state == FINISH) begin
