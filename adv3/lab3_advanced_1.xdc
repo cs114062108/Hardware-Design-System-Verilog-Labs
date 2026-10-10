@@ -78,7 +78,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {mode_state[1]}]
 #  set_property IOSTANDARD LVCMOS33 [get_ports {volume[2]}]
 
 
-# 7 segment display
+## 7 segment display
+# ABCDEFG: display DISPLAY[6:0]
 set_property PACKAGE_PIN W7 [get_ports {DISPLAY[0]}]
    set_property IOSTANDARD LVCMOS33 [get_ports {DISPLAY[0]}]
 set_property PACKAGE_PIN W6 [get_ports {DISPLAY[1]}]
@@ -93,12 +94,15 @@ set_property PACKAGE_PIN V5 [get_ports {DISPLAY[5]}]
    set_property IOSTANDARD LVCMOS33 [get_ports {DISPLAY[5]}]
 set_property PACKAGE_PIN U7 [get_ports {DISPLAY[6]}]
    set_property IOSTANDARD LVCMOS33 [get_ports {DISPLAY[6]}]
+
+## DP: dp DISPLAY[7]
 set_property PACKAGE_PIN V7 [get_ports {DISPLAY[7]}]
    set_property IOSTANDARD LVCMOS33 [get_ports {DISPLAY[7]}]
 
 # set_property PACKAGE_PIN V7 [get_ports dp]
 #    set_property IOSTANDARD LVCMOS33 [get_ports dp]
 #
+# Digits: DIGIT
 set_property PACKAGE_PIN U2 [get_ports {DIGIT[0]}]
    set_property IOSTANDARD LVCMOS33 [get_ports {DIGIT[0]}]
 set_property PACKAGE_PIN U4 [get_ports {DIGIT[1]}]
