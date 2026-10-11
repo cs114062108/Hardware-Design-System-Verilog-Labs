@@ -81,6 +81,13 @@ util_adv3_1 = clock_divider.sv one_pulse.sv debounce.sv timer.sv
 vutil_adv3_1 = $(patsubst %, $(adv3_util_dir)/%, $(util_adv3_1))
 vadv3_1 = $(vmod_adv3_1) $(vutil_adv3_1)
 
+adv3_2_dir = $(adv3_dir)/part2_src
+mod_adv3_2 = lab3_adv2.sv ss_pat_handler.sv ss_pat.sv
+vmod_adv3_2 = $(patsubst %, $(adv3_2_dir)/%, $(mod_adv3_2))
+util_adv3_2 = clock_divider.sv one_pulse.sv debounce.sv
+vutil_adv3_2 = $(patsubst %, $(adv3_util_dir)/%, $(util_adv3_2))
+vadv3_2 = $(vmod_adv3_2) $(vutil_adv3_2)
+
 # .vvp requirements
 vvp1_1 = $(vvpdir)/lab1_1.vvp
 $(vvp1_1): $(v1_1)
@@ -121,8 +128,11 @@ $(vvp_pra3_util): $(vpra3_util)
 vvp_adv3_1 = $(vvpdir)/adv3_1.vvp
 $(vvp_adv3_1): $(vadv3_1)
 
+vvp_adv3_2 = $(vvpdir)/adv3_2.vvp
+$(vvp_adv3_2): $(vadv3_2)
+
 # --- Targets ---
-.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1
+.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1 adv3_2
 
 lb1_1: lb1_1_com lb1_1_sim
 lb1_1_com: $(vvp1_1)
@@ -179,6 +189,10 @@ pra3_util_sim: run-pra3_util
 adv3_1: adv3_1_com adv3_1_sim
 adv3_1_com: $(vvp_adv3_1)
 adv3_1_sim: run-adv3_1
+
+adv3_2: adv3_2_com adv3_2_sim
+adv3_2_com: $(vvp_adv3_2)
+adv3_2_sim: run-adv3_2
 
 # -- Universal make logic --
 # Compile pattern rule
