@@ -84,7 +84,7 @@ vadv3_1 = $(vmod_adv3_1) $(vutil_adv3_1)
 adv3_2_dir = $(adv3_dir)/part2_src
 mod_adv3_2 = lab3_adv2.sv ss_pat_handler.sv ss_pat.sv
 vmod_adv3_2 = $(patsubst %, $(adv3_2_dir)/%, $(mod_adv3_2))
-util_adv3_2 = clock_divider.sv one_pulse.sv debounce.sv
+util_adv3_2 = clock_divider.sv one_pulse.sv debounce.sv timer.sv
 vutil_adv3_2 = $(patsubst %, $(adv3_util_dir)/%, $(util_adv3_2))
 vadv3_2 = $(vmod_adv3_2) $(vutil_adv3_2)
 
