@@ -232,8 +232,8 @@ module lab3_advanced_1 (
             SET1: begin
                 dis_val1 = inp_ten;         // Live values from switches
                 dis_val2 = inp_one;
-                dis_val3 = bcd_val2[7:4];
-                dis_val4 = bcd_val2[3:0];
+                dis_val3 = 4'd0;
+                dis_val4 = 4'd0;
 
                 show1 = blinker;
                 show2 = blinker;
