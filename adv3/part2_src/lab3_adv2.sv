@@ -13,6 +13,18 @@
 //   |_ timer.sv
 // -----------------------------
 
+// -----------------------------
+// Modules:
+// lab3_advanced_2 (lab3_adv2.sv)
+//   |_ debounce (debounce.sv)
+//   |_ one_pulse (one_pulse.sv)
+//   |_ timer (timer.sv)
+//   |_ SSPatHandler (ss_pat_handler.sv)
+//        |_ one_pulse (one_pulse.sv)
+//        |_ clock_divider (clock_divider.sv)
+//        |_ SevenSegPat (ss_pat.sv)
+// -----------------------------
+
 module lab3_advanced_2(
     input logic clk, 
     input logic rst, 
