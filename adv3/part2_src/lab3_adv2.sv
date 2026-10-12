@@ -1,5 +1,18 @@
 `timescale 1ns/1ps
 
+// -----------------------------
+// Source Files:
+// part1_src
+//   |_ lab3_adv2.sv
+//   |_ ss_pat_handler.sv
+//   |_ ss_pat.sv
+// utils
+//   |_ clock_divider.sv
+//   |_ debounce.sv
+//   |_ one_pulse.sv
+//   |_ timer.sv
+// -----------------------------
+
 module lab3_advanced_2(
     input logic clk, 
     input logic rst, 

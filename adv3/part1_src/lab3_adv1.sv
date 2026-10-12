@@ -14,8 +14,8 @@
 // -----------------------------
 
 // -----------------------------
-// Modules
-// lab3_adv1.sv
+// Modules:
+// lab3_advanced_1 (lab3_adv1.sv)
 //   |_ debounce (debounce.sv)
 //   |_ one_pulse (one_pulse.sv)
 //   |_ timer (timer.sv)

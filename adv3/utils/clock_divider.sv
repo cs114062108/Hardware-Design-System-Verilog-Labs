@@ -22,4 +22,5 @@ module clock_divider #(
 
     assign next_num = (enable == 1'b1) ? num + 1'b1 : {n{1'b0}};
     assign clk_div = num[n-1];
+    
 endmodule

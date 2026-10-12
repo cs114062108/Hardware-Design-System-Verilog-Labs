@@ -24,4 +24,5 @@ module timer #(
                       (num == COUNT - 1) ? 32'd0 :
                       num + 1'b1;
     assign tick = enable && (num == COUNT - 1);
+    
 endmodule
