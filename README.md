@@ -160,6 +160,7 @@
 | [![adv3_1_fsm_0.svg](diagrams/lab3_adv/adv3_1_fsm_0.svg)](adv3/part1_src/lab3_adv1.sv) |
 | <div align="center">Schematic Diagram</div> |
 | [![adv3_1_subs_raw_0.svg](diagrams/lab3_adv/adv3_1_subs_raw_0.svg)](adv3/part1_src/lab3_adv1.sv) |
+| [![adv3_1_subs_0.svg](diagrams/lab3_adv/adv3_1_subs_0.svg)](adv3/part1_src/lab3_adv1.sv) |
 
 ### Part 2
 | <div align="center">Diagram</div> |
