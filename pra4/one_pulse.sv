@@ -10,4 +10,5 @@ module one_pulse (
 		pb_out <= (pb_in & ~pb_in_delay);
 		pb_in_delay <= pb_in;
 	end
+	
 endmodule

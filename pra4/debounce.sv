@@ -3,7 +3,7 @@ module debounce #(
 )(
     input logic clk,
     input logic pb,
-    output logic pb_debounced
+    output logic pb_db
 );
 
     logic [n-1:0] shift_reg;
@@ -13,5 +13,6 @@ module debounce #(
         shift_reg[0] <= pb;
     end
 
-    assign pb_debounced = &shift_reg;
+    assign pb_db = &shift_reg;
+    
 endmodule
