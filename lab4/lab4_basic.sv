@@ -272,7 +272,7 @@ module timer #(
         if (!enable) begin
             next_cnt = 32'd0;
         end else begin
-            next_cnt = (cnt < COUNT - 1) ? (cnt + 1'b1) : (COUNT - 1);
+            next_cnt = (cnt < COUNT - 1) ? (cnt + 1'b1) : 32'd0; // Fix: should be a circular counter
         end
     end
 
