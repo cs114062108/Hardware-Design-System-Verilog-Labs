@@ -50,7 +50,6 @@ module lab5_practice (
                 valid[i] <= 1'b0;
             end
             cnt_valid <= 4'd0;
-            dout <= 4'd0;
         end else begin
             if (we) begin
                 memory[mapped_w_addr] <= din;

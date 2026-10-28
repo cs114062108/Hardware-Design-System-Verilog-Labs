@@ -5,6 +5,18 @@
 | --- |
 | ![lab0_vvd_0.png](waveforms/lab0/lab0_vvd_0.png) |
 
+## Lab5: Practice
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| [![lab5_pra_gtk_0.png](waveforms/lab5_pra/lab5_pra_gtk_0.png)](pra5/lab5_practice_tb.sv) |
+| <div align="center">Vivado</div> |
+| [![lab5_pra_vvd_0.png](waveforms/lab5_pra/lab5_pra_vvd_0.png)](pra5/lab5_practice.sv) |
+
+| <div align="center">Diagram</div> |
+| --- |
+| [![lab5_pra_0.svg](diagrams/lab5_pra/lab5_pra_0.svg)](pra5/lab5_practice.sv) |
+
 ## Lab1: Practices
 ### Practice 1
 | <div align="center">Diagram</div> |
