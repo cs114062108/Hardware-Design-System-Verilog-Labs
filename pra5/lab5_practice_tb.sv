@@ -20,6 +20,10 @@ module lab5_practice_tb;
     integer error_count;
     integer total_error;
 
+    // Expected results for debug
+    logic [3:0] expected_dout = 4'd0;
+    logic [3:0] expected_cnt = 4'd0; 
+
     // Clock period = 10ns
     always #5 clk = ~clk;
 
@@ -51,6 +55,11 @@ module lab5_practice_tb;
         input [255:0] msg;
         begin
             #1;
+
+            // Expected results for debug
+            expected_dout = exp_dout;
+            expected_cnt  = exp_cnt;
+
             if (dout !== exp_dout || cnt_valid !== exp_cnt) begin
                 $display("[ERROR] %s", msg);
                 $display("        expected dout=%0d, cnt_valid=%0d", exp_dout, exp_cnt);
@@ -196,6 +205,12 @@ module lab5_practice_tb;
             din = 4'd0;
         end
     endtask
+
+    // Dump for GTKwave
+    initial begin
+        $dumpfile("waves/pra5.vcd");
+        $dumpvars(0, lab5_practice_tb);
+    end
 
     initial begin
         $display("==== Simulation Starts ====");
