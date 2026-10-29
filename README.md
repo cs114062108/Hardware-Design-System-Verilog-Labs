@@ -15,6 +15,11 @@
 
 | <div align="center">Diagram</div> |
 | --- |
+| <div align="center">Vivado Block Design</div> |
+| [![lab5_pra_bd_0.png](diagrams/lab5_pra/lab5_pra_bd_0.png)](pra5/lab5_practice.sv) |
+| <div align="center">Block</div> |
+| [![lab5_practice.svg](diagrams/lab5_pra/lab5_practice.svg)](pra5/lab5_practice.sv) |
+| <div align="center">Schematic</div> |
 | [![lab5_pra_0.svg](diagrams/lab5_pra/lab5_pra_0.svg)](pra5/lab5_practice.sv) |
 
 ## Lab1: Practices
