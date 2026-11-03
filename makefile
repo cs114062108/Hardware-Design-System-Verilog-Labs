@@ -100,6 +100,17 @@ tb_pra5 = lab5_practice_tb.sv
 src_pra5 = $(mod_pra5) $(tb_pra5)
 vpra5 = $(patsubst %, $(pra5_dir)/%, $(src_pra5))
 
+lab5_dir = lab5
+mod_lab5 = lab5_basic.sv
+
+tb_lab5 = lab5_basic_tb.sv
+src_lab5 = $(mod_lab5) $(tb_lab5)
+vlab5 = $(patsubst %, $(lab5_dir)/%, $(src_lab5))
+
+tb_lab5_hid = lab5_basic_tb_hidden.sv
+src_lab5_hid = $(mod_lab5) $(tb_lab5_hid)
+vlab5_hid = $(patsubst %, $(lab5_dir)/%, $(src_lab5_hid))
+
 # .vvp requirements
 vvp1_1 = $(vvpdir)/lab1_1.vvp
 $(vvp1_1): $(v1_1)
@@ -149,8 +160,14 @@ $(vvp_pra4): $(vpra4)
 vvp_pra5 = $(vvpdir)/pra5.vvp
 $(vvp_pra5): $(vpra5)
 
+vvp_lab5 = $(vvpdir)/lab5.vvp
+$(vvp_lab5): $(vlab5)
+
+vvp_lab5_hid = $(vvpdir)/lab5_hid.vvp
+$(vvp_lab5_hid): $(vlab5_hid)
+
 # --- Targets ---
-.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1 adv3_2 pra4 pra5
+.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1 adv3_2 pra4 pra5 lab5 lab5_hid
 
 lb1_1: lb1_1_com lb1_1_sim
 lb1_1_com: $(vvp1_1)
@@ -219,6 +236,14 @@ pra4_sim: run-pra4
 pra5: pra5_com pra5_sim
 pra5_com: $(vvp_pra5)
 pra5_sim: run-pra5
+
+lab5: lab5_com lab5_sim
+lab5_com: $(vvp_lab5)
+lab5_sim: run-lab5
+
+lab5_hid: lab5_hid_com lab5_hid_sim
+lab5_hid_com: $(vvp_lab5_hid)
+lab5_hid_sim: run-lab5_hid
 
 # -- Universal make logic --
 # Compile pattern rule
