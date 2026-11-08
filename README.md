@@ -12,6 +12,12 @@
 | <div align="center">Vivado</div> |
 | ![lab5_basic_vvd_0.png](waveforms/lab5_basic/lab5_basic_vvd_0.png) |
 
+### Hidden Testbench
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">Vivado</div> |
+| ![lab5_basic_hidden_vvd_0.png](waveforms/lab5_basic/lab5_basic_hidden_vvd_0.png) |
+
 ## Lab5: Practice
 | <div align="center">Waveform</div> |
 | --- |

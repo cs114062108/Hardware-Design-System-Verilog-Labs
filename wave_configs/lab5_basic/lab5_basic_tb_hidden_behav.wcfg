@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lab5_basic_tb_hidden_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="lab5_basic_tb_hidden" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="845.000 ns"></ZoomEndTime>
+      <Cursor1Time time="844.475 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="193"></NameColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/lab5_basic_tb_hidden/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/re" type="logic">
+      <obj_property name="ElementShortName">re</obj_property>
+      <obj_property name="ObjectShortName">re</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/din" type="array">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/data" type="array">
+      <obj_property name="ElementShortName">data[5:0]</obj_property>
+      <obj_property name="ObjectShortName">data[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/addr" type="array">
+      <obj_property name="ElementShortName">addr[1:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/found" type="logic">
+      <obj_property name="ElementShortName">found</obj_property>
+      <obj_property name="ObjectShortName">found</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1" type="array">
+      <obj_property name="ElementShortName">memory1[3:0][5:0]</obj_property>
+      <obj_property name="ObjectShortName">memory1[3:0][5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[3]" type="array">
+         <obj_property name="ElementShortName">[3][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[2]" type="array">
+         <obj_property name="ElementShortName">[2][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[1]" type="array">
+         <obj_property name="ElementShortName">[1][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[0]" type="array">
+         <obj_property name="ElementShortName">[0][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[3]" type="array">
+         <obj_property name="ElementShortName">[3][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[2]" type="array">
+         <obj_property name="ElementShortName">[2][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[1]" type="array">
+         <obj_property name="ElementShortName">[1][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory1[0]" type="array">
+         <obj_property name="ElementShortName">[0][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][5:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/valid1" type="array">
+      <obj_property name="ElementShortName">valid1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">valid1[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2" type="array">
+      <obj_property name="ElementShortName">memory2[3:0][5:0]</obj_property>
+      <obj_property name="ObjectShortName">memory2[3:0][5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[3]" type="array">
+         <obj_property name="ElementShortName">[3][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[2]" type="array">
+         <obj_property name="ElementShortName">[2][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[1]" type="array">
+         <obj_property name="ElementShortName">[1][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[0]" type="array">
+         <obj_property name="ElementShortName">[0][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[3]" type="array">
+         <obj_property name="ElementShortName">[3][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[2]" type="array">
+         <obj_property name="ElementShortName">[2][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[1]" type="array">
+         <obj_property name="ElementShortName">[1][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab5_basic_tb_hidden/basic/memory2[0]" type="array">
+         <obj_property name="ElementShortName">[0][5:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][5:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/basic/valid2" type="array">
+      <obj_property name="ElementShortName">valid2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">valid2[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/total_errors" type="array">
+      <obj_property name="ElementShortName">total_errors[31:0]</obj_property>
+      <obj_property name="ObjectShortName">total_errors[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/passed_testcases" type="array">
+      <obj_property name="ElementShortName">passed_testcases[31:0]</obj_property>
+      <obj_property name="ObjectShortName">passed_testcases[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_basic_tb_hidden/current_case_name" type="array">
+      <obj_property name="ElementShortName">current_case_name[1024:1]</obj_property>
+      <obj_property name="ObjectShortName">current_case_name[1024:1]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+</wave_config>
