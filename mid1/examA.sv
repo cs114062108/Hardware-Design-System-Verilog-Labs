@@ -1,4 +1,4 @@
-// Student ID Name // FIXME: Fill in your student ID and name here. EX: 111000111 David Wang
+// 114062108 杜時羽 // FIXME: Fill in your student ID and name here. EX: 111000111 David Wang
 
 module fir_filter (
     input  logic        clk,

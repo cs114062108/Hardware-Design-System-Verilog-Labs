@@ -1,4 +1,4 @@
-// Student ID Name // FIXME: Fill in your student ID and name here. EX: 111000111 David Wang
+// 114062108 杜時羽 // FIXME: Fill in your student ID and name here. EX: 111000111 David Wang
 
 module FIFO (
     input  logic       clk,
@@ -37,6 +37,22 @@ module FIFO (
     assign valid_pop  = pop_data_reg  && !empty;
 
     // TODO:
+    logic [3:0] next_count;
+    logic next_full;
+    logic next_empty;
+
+    always_comb begin
+        // Next count: depends on the current push/pop, computed combinationally
+        case ({valid_push, valid_pop})
+            2'b10:   next_count = data_count + 4'd1;   // push only
+            2'b01:   next_count = data_count - 4'd1;   // pop only
+            default: next_count = data_count;          // both or neither
+        endcase
+
+        next_full = next_count == FIFO_DEPTH;
+        next_empty = next_count == 4'd0; 
+    end
+
     // 1. Register input signals.
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -53,6 +69,9 @@ module FIFO (
             for (int i = 0; i < FIFO_DEPTH; i++) begin
                 fifo_data[i] <= 8'd0;
             end
+
+            full <= 1'b0;
+            empty <= 1'b1;
         end else begin
             data_in_reg <= data_in;
             push_data_reg <= push_data;
@@ -60,24 +79,24 @@ module FIFO (
 
             // 2. Implement push and pop operations.
             // 3. Wrap pointers from 11 back to 0.
-            // 4. Update data_count.
             if (valid_push) begin
                 fifo_data[write_pointer] <= data_in_reg;
                 write_pointer <= (write_pointer < 4'd11) ? (write_pointer + 4'd1) : 4'd0;
-                data_count <= data_count + 4'd1;
             end
+            
+            // 5. Register data_out, full, and empty.
             if (valid_pop) begin
-                data_count <= fifo_data[read_pointer];
-                read_pointer <= (read_pointer > 4'd0) ? (read_pointer - 4'd1) : 4'd11;
-                data_count <= data_count + 4'd1;
+                data_out <= fifo_data[read_pointer];
+                read_pointer <= (read_pointer < 4'd11) ? (read_pointer + 4'd1) : 4'd0;
             end
+            
+            // 4. Update data_count.
+            data_count <= next_count;
+
+            full <= next_full;
+            empty <= next_empty;
         end
     end
 
-    // 5. Register data_out, full, and empty.
-    always_comb begin
-        full = data_count == FIFO_DEPTH;
-        empty = data_count == 4'd0; 
-    end
 
 endmodule

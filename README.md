@@ -18,6 +18,12 @@
 | <div align="center">ExamB (253/400) (25.3/40)</div> |
 | ![examA_vvd_0.png](waveforms/mid1/examB_vvd_0.png) |
 
+### ExamB Corrected
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">ExamB (400/400) (40/40)</div> |
+| ![examA_vvd_1.png](waveforms/mid1/examB_vvd_1.png) |
+
 ## Lab5: Basic Lab (AC Straight from Lab)
 ### Basic Testbench
 | <div align="center">Waveform</div> |
