@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="exam_A_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="exam_A_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="262.425 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="221"></NameColumnWidth>
+      <ValueColumnWidth column_width="80"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject fp_name="/exam_A_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/data_in_enable" type="logic">
+      <obj_property name="ElementShortName">data_in_enable</obj_property>
+      <obj_property name="ObjectShortName">data_in_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/weight_0" type="array">
+      <obj_property name="ElementShortName">weight_0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_0[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/weight_1" type="array">
+      <obj_property name="ElementShortName">weight_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_1[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/weight_2" type="array">
+      <obj_property name="ElementShortName">weight_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/weight_3" type="array">
+      <obj_property name="ElementShortName">weight_3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_3[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/weight_4" type="array">
+      <obj_property name="ElementShortName">weight_4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_4[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/dut/regs" type="array">
+      <obj_property name="ElementShortName">regs[0:3][7:0]</obj_property>
+      <obj_property name="ObjectShortName">regs[0:3][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/exam_A_tb/dut/regs[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_A_tb/dut/regs[1]" type="array">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_A_tb/dut/regs[2]" type="array">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_A_tb/dut/regs[3]" type="array">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/dut/sum" type="array">
+      <obj_property name="ElementShortName">sum[18:0]</obj_property>
+      <obj_property name="ObjectShortName">sum[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/y" type="array">
+      <obj_property name="ElementShortName">y[18:0]</obj_property>
+      <obj_property name="ObjectShortName">y[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/exp_y" type="array">
+      <obj_property name="ElementShortName">exp_y[18:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_y[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/checked_pattern_count" type="array">
+      <obj_property name="ElementShortName">checked_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checked_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/passed_pattern_count" type="array">
+      <obj_property name="ElementShortName">passed_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">passed_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/failed_pattern_count" type="array">
+      <obj_property name="ElementShortName">failed_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">failed_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/error_count" type="array">
+      <obj_property name="ElementShortName">error_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">error_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/file_pattern_count" type="array">
+      <obj_property name="ElementShortName">file_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">file_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/golden_pattern_count" type="array">
+      <obj_property name="ElementShortName">golden_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">golden_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/current_score" type="other">
+      <obj_property name="ElementShortName">current_score</obj_property>
+      <obj_property name="ObjectShortName">current_score</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/POINT_PER_PATTERN" type="other">
+      <obj_property name="ElementShortName">POINT_PER_PATTERN</obj_property>
+      <obj_property name="ObjectShortName">POINT_PER_PATTERN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_A_tb/MAX_SCORE" type="other">
+      <obj_property name="ElementShortName">MAX_SCORE</obj_property>
+      <obj_property name="ObjectShortName">MAX_SCORE</obj_property>
+   </wvobject>
+</wave_config>

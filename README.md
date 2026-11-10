@@ -5,6 +5,19 @@
 | --- |
 | ![lab0_vvd_0.png](waveforms/lab0/lab0_vvd_0.png) |
 
+## Midterm 1
+### Straight from lab
+| ExamA | ExamB | ExamC | Total |
+| --- | --- | --- | --- |
+| 30/30 | 25.3/40 | 0/30 | 55.3/100 |
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">ExamA (300/300) (30/30)</div> |
+| ![examA_vvd_0.png](waveforms/mid1/examA_vvd_0.png) |
+| <div align="center">ExamB (253/400) (25.3/40)</div> |
+| ![examA_vvd_0.png](waveforms/mid1/examB_vvd_0.png) |
+
 ## Lab5: Basic Lab (AC Straight from Lab)
 ### Basic Testbench
 | <div align="center">Waveform</div> |

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="exam_B_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="exam_B_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="269.421 ns"></ZoomStartTime>
+      <ZoomEndTime time="457.487 ns"></ZoomEndTime>
+      <Cursor1Time time="276.099 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/exam_B_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/push_data" type="logic">
+      <obj_property name="ElementShortName">push_data</obj_property>
+      <obj_property name="ObjectShortName">push_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/pop_data" type="logic">
+      <obj_property name="ElementShortName">pop_data</obj_property>
+      <obj_property name="ObjectShortName">pop_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/push_data_reg" type="logic">
+      <obj_property name="ElementShortName">push_data_reg</obj_property>
+      <obj_property name="ObjectShortName">push_data_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/pop_data_reg" type="logic">
+      <obj_property name="ElementShortName">pop_data_reg</obj_property>
+      <obj_property name="ObjectShortName">pop_data_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/valid_push" type="logic">
+      <obj_property name="ElementShortName">valid_push</obj_property>
+      <obj_property name="ObjectShortName">valid_push</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/valid_pop" type="logic">
+      <obj_property name="ElementShortName">valid_pop</obj_property>
+      <obj_property name="ObjectShortName">valid_pop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/data_in_reg" type="array">
+      <obj_property name="ElementShortName">data_in_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_reg[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/data_count" type="array">
+      <obj_property name="ElementShortName">data_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data_count[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/full" type="logic">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/empty" type="logic">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/exp_data_out" type="array">
+      <obj_property name="ElementShortName">exp_data_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_data_out[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/exp_full" type="logic">
+      <obj_property name="ElementShortName">exp_full</obj_property>
+      <obj_property name="ObjectShortName">exp_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/exp_empty" type="logic">
+      <obj_property name="ElementShortName">exp_empty</obj_property>
+      <obj_property name="ObjectShortName">exp_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/dut/fifo_data" type="array">
+      <obj_property name="ElementShortName">fifo_data[0:11][7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_data[0:11][7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[1]" type="array">
+         <obj_property name="ElementShortName">[1][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[2]" type="array">
+         <obj_property name="ElementShortName">[2][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[3]" type="array">
+         <obj_property name="ElementShortName">[3][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[4]" type="array">
+         <obj_property name="ElementShortName">[4][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[5]" type="array">
+         <obj_property name="ElementShortName">[5][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[6]" type="array">
+         <obj_property name="ElementShortName">[6][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[7]" type="array">
+         <obj_property name="ElementShortName">[7][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[8]" type="array">
+         <obj_property name="ElementShortName">[8][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[9]" type="array">
+         <obj_property name="ElementShortName">[9][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[10]" type="array">
+         <obj_property name="ElementShortName">[10][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/exam_B_tb/dut/fifo_data[11]" type="array">
+         <obj_property name="ElementShortName">[11][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/error_count" type="array">
+      <obj_property name="ElementShortName">error_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">error_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/exam_B_tb/passed_pattern_count" type="array">
+      <obj_property name="ElementShortName">passed_pattern_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">passed_pattern_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
