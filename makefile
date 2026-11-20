@@ -111,6 +111,12 @@ tb_lab5_hid = lab5_basic_tb_hidden.sv
 src_lab5_hid = $(mod_lab5) $(tb_lab5_hid)
 vlab5_hid = $(patsubst %, $(lab5_dir)/%, $(src_lab5_hid))
 
+pra6_dir = pra6
+mod_pra6 = lab6_practice_master.sv lab6_practice_slave.sv
+tb_pra6 = lab6_practice_tb.sv
+src_pra6 = $(mod_pra6) $(tb_pra6)
+vpra6 = $(patsubst %, $(pra6_dir)/%, $(src_pra6))
+
 # .vvp requirements
 vvp1_1 = $(vvpdir)/lab1_1.vvp
 $(vvp1_1): $(v1_1)
@@ -166,8 +172,11 @@ $(vvp_lab5): $(vlab5)
 vvp_lab5_hid = $(vvpdir)/lab5_hid.vvp
 $(vvp_lab5_hid): $(vlab5_hid)
 
+vvp_pra6 = $(vvpdir)/pra6.vvp
+$(vvp_pra6): $(vpra6)
+
 # --- Targets ---
-.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1 adv3_2 pra4 pra5 lab5 lab5_hid
+.PHONY: clean lb1_1 lb1_1w lb1_2 lb1_2w lab1_1 lab1_2 pra2_1 pra2_1_m1 pra2_2 adv2 adv2_2 pra3 pra3_util adv3_1 adv3_2 pra4 pra5 lab5 lab5_hid pra6
 
 lb1_1: lb1_1_com lb1_1_sim
 lb1_1_com: $(vvp1_1)
@@ -244,6 +253,10 @@ lab5_sim: run-lab5
 lab5_hid: lab5_hid_com lab5_hid_sim
 lab5_hid_com: $(vvp_lab5_hid)
 lab5_hid_sim: run-lab5_hid
+
+pra6: pra6_com pra6_sim
+pra6_com: $(vvp_pra6)
+pra6_sim: run-pra6
 
 # -- Universal make logic --
 # Compile pattern rule
