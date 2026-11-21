@@ -5,6 +5,12 @@
 | --- |
 | ![lab0_vvd_0.png](waveforms/lab0/lab0_vvd_0.png) |
 
+## Lab6 Practice: Dual FPGA
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| ![lab6_pra_gtk_0.png](waveforms/lab6_pra/lab6_pra_gtk_0.png) |
+
 ## Midterm 1
 ### Straight from lab
 | ExamA | ExamB | ExamC | Total |

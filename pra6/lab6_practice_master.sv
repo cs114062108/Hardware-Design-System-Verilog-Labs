@@ -16,11 +16,12 @@ module lab6_practice_master (
 	// ---------------------------------------
 	// FSM (Synchronous Reset)
 	// ---------------------------------------
-	localparam S_Init = 2'b00;
-	localparam S_Req  = 2'b01;
-	localparam S_Ack  = 2'b10;
+	//localparam S_Init = 2'b00;
+	//localparam S_Req  = 2'b01;
+	//localparam S_Ack  = 2'b10;
+	typedef enum logic [1:0] {S_Init, S_Req, S_Ack} state_t;
 
-	logic [1:0] state, next_state;
+	state_t state, next_state;
 
 	always_ff @(posedge clk) begin
 		if (rst) begin	// sync reset
@@ -31,8 +32,17 @@ module lab6_practice_master (
 	end
 
 	// ---------------------------------------
-	// Process
+	// Process & LED
 	// ---------------------------------------
+	logic [3:0] data_reg;
+	always_ff @(posedge clk) begin
+		if (rst) begin
+			data_reg <= 4'd0;
+		end else if (state == S_Init && request_btn) begin
+			data_reg <= sw;
+		end
+	end
+
 	always_comb begin
 		case (state)
 			S_Req: begin
@@ -44,7 +54,7 @@ module lab6_practice_master (
 			S_Ack: begin
 				Request = 1'b0;
 				Data = 4'd0;
-				led = 4'b1111;
+				led = data_reg;
 			end
 
 			default: begin
@@ -89,10 +99,5 @@ module lab6_practice_master (
 			end
 		endcase
 	end
-
-	// ---------------------------------------
-	// LED
-	// ---------------------------------------
-	
 
 endmodule

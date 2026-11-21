@@ -61,7 +61,7 @@ module lab6_practice_tb0;
     logic [3:0] slave_LED;
 
     // Instantiate
-    lab6_practice_slave #(.COUNT(2)) slave_uut(
+    lab6_practice_slave #(.COUNT(8)) slave_uut(
         .clk(clk),
         .rst(slave_rst),
         .Request(Request),
@@ -78,8 +78,8 @@ module lab6_practice_tb0;
     // ---------------
     int unsigned test_index;
     int test_cnt = 2;
-    int wait_clk = 4;
-    int proc_clk = 12;
+    int wait_period = 4;
+    int proc_period = 12;
 
     logic [3:0] sws [0:3];
 
@@ -113,19 +113,23 @@ module lab6_practice_tb0;
             request_btn = 1'b1;
             sw = sws[test_index];
 
+            repeat (2) @(posedge clk);
+            sw = 4'd0;
+
             @(negedge clk);
             request_btn = 1'b0;
 
-            repeat (4) @(posedge clk);
+            repeat (proc_period) @(posedge clk);
         end
 
         $display("-------------------------------------------------------");
 
         @(negedge clk);
-        for (int i = 0; i < wait_clk; i++) begin
+        for (int i = 0; i < wait_period; i++) begin
             repeat (2) @(posedge clk);
         end
-        #20;
+        
+        #1000ns;
         $finish;
     end
 
