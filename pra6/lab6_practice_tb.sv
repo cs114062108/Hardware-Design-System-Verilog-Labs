@@ -13,13 +13,28 @@ module lab6_practice_tb0;
     // ---------------------------------------
     // Clock
     // ---------------------------------------
+    localparam int CLK_Shift = 4;
+
     logic clk;
+    logic master_clk;
+    logic slave_clk;
     
     // Starting high places falling edges at 5, 15, 25, ... ns and rising
     // edges at 10, 20, 30, ... ns.
     initial begin
         clk = 1'b1;
         forever #5ns clk = ~clk;
+    end
+
+    initial begin
+        master_clk = 1'b1;
+        forever #5ns master_clk = ~master_clk;
+    end
+
+    initial begin
+        slave_clk = 1'b1;
+        #(CLK_Shift);
+        forever #5ns slave_clk = ~slave_clk;
     end
 
     // ---------------------------------------
@@ -41,7 +56,7 @@ module lab6_practice_tb0;
 
     // Instantiate
     lab6_practice_master master_uut(
-        .clk(clk),
+        .clk(master_clk),
         .rst(master_rst),
         .request_btn(request_btn),
         .sw(sw),
@@ -62,7 +77,7 @@ module lab6_practice_tb0;
 
     // Instantiate
     lab6_practice_slave #(.COUNT(8)) slave_uut(
-        .clk(clk),
+        .clk(slave_clk),
         .rst(slave_rst),
         .Request(Request),
         .Data(Data),
@@ -91,14 +106,23 @@ module lab6_practice_tb0;
     // Resets (Synchronous)
     initial begin
         master_rst = 1'b0;
-        slave_rst = 1'b0;
         
-        #6ns;   // At 1 ns
+        #6ns;   // At 6 ns
         master_rst = 1'b1;
-        slave_rst = 1'b1;
 
         #6ns;   // At 12 ns
         master_rst = 1'b0;
+    end
+
+    initial begin
+        slave_rst = 1'b0;
+        
+        #(CLK_Shift);
+
+        #6ns;   // At 6+4 ns
+        slave_rst = 1'b1;
+
+        #6ns;   // At 12+4 ns
         slave_rst = 1'b0;
     end
 
