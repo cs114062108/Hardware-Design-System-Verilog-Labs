@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="185.001 ns"></ZoomEndTime>
-      <Cursor1Time time="183.794 ns"></Cursor1Time>
+      <ZoomEndTime time="142.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="90"></ValueColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="12" />
    <wvobject fp_name="/lab6_practice_tb0/clk" type="logic">
@@ -52,6 +52,7 @@
       <wvobject fp_name="/lab6_practice_tb0/master_uut/data_reg" type="array">
          <obj_property name="ElementShortName">data_reg[3:0]</obj_property>
          <obj_property name="ObjectShortName">data_reg[3:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/lab6_practice_tb0/master_LED" type="array">
          <obj_property name="ElementShortName">master_LED[3:0]</obj_property>
@@ -91,6 +92,7 @@
       <wvobject fp_name="/lab6_practice_tb0/slave_uut/data_reg" type="array">
          <obj_property name="ElementShortName">data_reg[3:0]</obj_property>
          <obj_property name="ObjectShortName">data_reg[3:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/lab6_practice_tb0/slave_uut/ack_tick" type="logic">
          <obj_property name="ElementShortName">ack_tick</obj_property>

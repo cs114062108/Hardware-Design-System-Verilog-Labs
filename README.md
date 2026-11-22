@@ -6,10 +6,17 @@
 | ![lab0_vvd_0.png](waveforms/lab0/lab0_vvd_0.png) |
 
 ## Lab6 Practice: Dual FPGA
+### No clock Shift
 | <div align="center">Waveform</div> |
 | --- |
 | <div align="center">gtkwave</div> |
 | ![lab6_pra_gtk_0.png](waveforms/lab6_pra/lab6_pra_gtk_0.png) |
+
+### With clock Shift
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">Vivado</div> |
+| ![lab6_pra_vvd_1.png](waveforms/lab6_pra/lab6_pra_vvd_1.png) |
 
 ## Midterm 1
 ### Straight from lab
