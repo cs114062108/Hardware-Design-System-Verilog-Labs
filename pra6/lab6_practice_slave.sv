@@ -17,15 +17,15 @@ module lab6_practice_slave #(
     // ---------------------------------------
     // FSM (Synchronous Reset)
     // ---------------------------------------
-    //localparam S_Init = 2'b00;
-    //localparam S_Ack  = 2'b01;
-    typedef enum logic [1:0] {S_Init, S_Ack} state_t;
+    //localparam Init = 2'b00;
+    //localparam Ack  = 2'b01;
+    typedef enum logic [1:0] {Init, Ack} state_t;
 
     state_t state, next_state;
 
     always_ff @(posedge clk) begin
         if (rst) begin  // sync reset
-            state <= S_Init;
+            state <= Init;
         end else begin
             state <= next_state;
         end
@@ -35,7 +35,7 @@ module lab6_practice_slave #(
     // Ack Timing
     // ---------------------------------------
     logic ack_rst, ack_enable;
-    assign ack_enable = state == S_Ack;
+    assign ack_enable = state == Ack;
     assign ack_rst = rst || !ack_enable;
 
     logic ack_tick;
@@ -51,7 +51,7 @@ module lab6_practice_slave #(
     end
     
     logic ack_done;
-    assign ack_done = (state == S_Ack) ? (ack_cnt == 3'd1) : 1'b0;
+    assign ack_done = (state == Ack) ? (ack_cnt == 3'd1) : 1'b0;
 
     // ---------------------------------------
     // Process & LED
@@ -60,14 +60,14 @@ module lab6_practice_slave #(
     always_ff @(posedge clk) begin
         if (rst) begin
             data_reg <= 4'd0;
-        end else if (state == S_Init && Request) begin
+        end else if (state == Init && Request) begin
             data_reg <= Data;
         end
     end
 
     always_comb begin
         case (state)
-            S_Ack: begin
+            Ack: begin
                 ACK = 1'b1;
                 led = data_reg;
             end
@@ -84,24 +84,24 @@ module lab6_practice_slave #(
     // ---------------------------------------
     always_comb begin
         case (state)
-            S_Init: begin
+            Init: begin
                 if (Request) begin
-                    next_state = S_Ack;
+                    next_state = Ack;
                 end else begin
-                    next_state = S_Init;
+                    next_state = Init;
                 end
             end
 
-            S_Ack: begin
+            Ack: begin
                 if (ack_done) begin
-                    next_state = S_Init;    
+                    next_state = Init;    
                 end else begin
-                    next_state = S_Ack;
+                    next_state = Ack;
                 end
             end
 
             default: begin  // latch prevent
-                next_state = S_Init;
+                next_state = Init;
             end
         endcase
     end

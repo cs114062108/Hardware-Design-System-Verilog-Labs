@@ -16,16 +16,16 @@ module lab6_practice_master (
 	// ---------------------------------------
 	// FSM (Synchronous Reset)
 	// ---------------------------------------
-	//localparam S_Init = 2'b00;
-	//localparam S_Req  = 2'b01;
-	//localparam S_Ack  = 2'b10;
-	typedef enum logic [1:0] {S_Init, S_Req, S_Ack} state_t;
+	//localparam Init = 2'b00;
+	//localparam Req  = 2'b01;
+	//localparam Ack  = 2'b10;
+	typedef enum logic [1:0] {Init, Req, Ack} state_t;
 
 	state_t state, next_state;
 
 	always_ff @(posedge clk) begin
 		if (rst) begin	// sync reset
-			state <= S_Init;
+			state <= Init;
 		end else begin
 			state <= next_state;
 		end
@@ -38,20 +38,20 @@ module lab6_practice_master (
 	always_ff @(posedge clk) begin
 		if (rst) begin
 			data_reg <= 4'd0;
-		end else if (state == S_Init && request_btn) begin
+		end else if (state == Init && request_btn) begin
 			data_reg <= sw;
 		end
 	end
 
 	always_comb begin
 		case (state)
-			S_Req: begin
+			Req: begin
 				Request = 1'b1;
 				Data = sw;
 				led = 4'd0;
 			end
 
-			S_Ack: begin
+			Ack: begin
 				Request = 1'b0;
 				Data = 4'd0;
 				led = data_reg;
@@ -70,32 +70,32 @@ module lab6_practice_master (
 	// ---------------------------------------
 	always_comb begin
 		case (state)
-			S_Init: begin
+			Init: begin
 				if (request_btn) begin
-					next_state = S_Req;
+					next_state = Req;
 				end else begin
-					next_state = S_Init;
+					next_state = Init;
 				end
 			end
 
-			S_Req: begin
+			Req: begin
 				if (ACK) begin
-					next_state = S_Ack;
+					next_state = Ack;
 				end else begin
-					next_state = S_Req;
+					next_state = Req;
 				end
 			end
 
-			S_Ack: begin
+			Ack: begin
 				if (!ACK) begin
-					next_state = S_Init;
+					next_state = Init;
 				end else begin
-					next_state = S_Ack;
+					next_state = Ack;
 				end
 			end
 
 			default: begin	// latch prevent
-				next_state = S_Init;
+				next_state = Init;
 			end
 		endcase
 	end
