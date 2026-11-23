@@ -94,7 +94,7 @@ module lab6_practice_tb0;
     int unsigned test_index;
     int test_cnt = 2;
     int wait_period = 4;
-    int proc_period = 12;
+    int proc_period = 14;
 
     logic [3:0] sws [0:3];
 

@@ -23,6 +23,8 @@
 | --- |
 | <div align="center">Vivado</div> |
 | ![lab6_pra_vvd_2.png](waveforms/lab6_pra/lab6_pra_vvd_2.png) |
+| <div align="center">Vivado (Testbench Fail: request too early)</div> |
+| ![lab6_pra_vvd_2_fail.png](waveforms/lab6_pra/lab6_pra_vvd_2_fail.png) |
 
 ## Midterm 1
 ### Straight from lab
