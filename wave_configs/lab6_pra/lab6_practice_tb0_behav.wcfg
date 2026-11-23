@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="142.401 ns"></ZoomEndTime>
-      <Cursor1Time time="0.000 ns"></Cursor1Time>
+      <ZoomEndTime time="188.117 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <ValueColumnWidth column_width="82"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="12" />
    <wvobject fp_name="/lab6_practice_tb0/clk" type="logic">
@@ -48,6 +48,14 @@
       <wvobject fp_name="/lab6_practice_tb0/master_uut/state" type="array">
          <obj_property name="ElementShortName">state[1:0]</obj_property>
          <obj_property name="ObjectShortName">state[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab6_practice_tb0/master_uut/ack_si" type="logic">
+         <obj_property name="ElementShortName">ack_si</obj_property>
+         <obj_property name="ObjectShortName">ack_si</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab6_practice_tb0/master_uut/ack_s" type="logic">
+         <obj_property name="ElementShortName">ack_s</obj_property>
+         <obj_property name="ObjectShortName">ack_s</obj_property>
       </wvobject>
       <wvobject fp_name="/lab6_practice_tb0/master_uut/data_reg" type="array">
          <obj_property name="ElementShortName">data_reg[3:0]</obj_property>
@@ -88,6 +96,14 @@
       <wvobject fp_name="/lab6_practice_tb0/slave_uut/state" type="array">
          <obj_property name="ElementShortName">state[1:0]</obj_property>
          <obj_property name="ObjectShortName">state[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab6_practice_tb0/slave_uut/req_si" type="logic">
+         <obj_property name="ElementShortName">req_si</obj_property>
+         <obj_property name="ObjectShortName">req_si</obj_property>
+      </wvobject>
+      <wvobject fp_name="/lab6_practice_tb0/slave_uut/req_s" type="logic">
+         <obj_property name="ElementShortName">req_s</obj_property>
+         <obj_property name="ObjectShortName">req_s</obj_property>
       </wvobject>
       <wvobject fp_name="/lab6_practice_tb0/slave_uut/data_reg" type="array">
          <obj_property name="ElementShortName">data_reg[3:0]</obj_property>

@@ -18,6 +18,12 @@
 | <div align="center">Vivado</div> |
 | ![lab6_pra_vvd_1.png](waveforms/lab6_pra/lab6_pra_vvd_1.png) |
 
+### With Synchronizer
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">Vivado</div> |
+| ![lab6_pra_vvd_2.png](waveforms/lab6_pra/lab6_pra_vvd_2.png) |
+
 ## Midterm 1
 ### Straight from lab
 | ExamA | ExamB | ExamC | Total |

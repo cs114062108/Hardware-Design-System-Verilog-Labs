@@ -32,7 +32,16 @@ module lab6_practice_master (
 	end
 
 	// ---------------------------------------
-	// Process & LED
+	// Synchronizer
+	// ---------------------------------------
+	logic ack_si, ack_s;
+	always_ff @(posedge clk) begin
+		ack_si <= ACK;
+		ack_s  <= ack_si;
+	end
+
+	// ---------------------------------------
+	// Data Register
 	// ---------------------------------------
 	logic [3:0] data_reg;
 	always_ff @(posedge clk) begin
@@ -43,26 +52,28 @@ module lab6_practice_master (
 		end
 	end
 
+	// ---------------------------------------
+	// Process & LED
+	// ---------------------------------------
 	always_comb begin
 		case (state)
 			Req: begin
 				Request = 1'b1;
-				Data = sw;
-				led = 4'd0;
+				Data = data_reg;
 			end
 
 			Ack: begin
 				Request = 1'b0;
 				Data = 4'd0;
-				led = data_reg;
 			end
 
 			default: begin
 				Request = 1'b0;
 				Data = 4'd0;
-				led = 4'd0;
 			end
 		endcase
+
+		led = ack_s ? data_reg : 4'd0;
 	end
 
 	// ---------------------------------------
@@ -79,7 +90,7 @@ module lab6_practice_master (
 			end
 
 			Req: begin
-				if (ACK) begin
+				if (ack_s) begin
 					next_state = Ack;
 				end else begin
 					next_state = Req;
@@ -87,7 +98,7 @@ module lab6_practice_master (
 			end
 
 			Ack: begin
-				if (!ACK) begin
+				if (!ack_s) begin
 					next_state = Init;
 				end else begin
 					next_state = Ack;

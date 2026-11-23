@@ -42,7 +42,7 @@ module lab6_practice_slave #(
     timer #(.COUNT(COUNT)) ack_timer(.clk(clk), .rst(ack_rst), .enable(ack_enable), .tick(ack_tick));
 
     logic [2:0] ack_cnt;
-    always_ff @(posedge clk or posedge ack_rst) begin
+    always_ff @(posedge clk) begin
         if (ack_rst) begin
             ack_cnt <= 3'd0;
         end else if (ack_tick) begin
@@ -54,17 +54,29 @@ module lab6_practice_slave #(
     assign ack_done = (state == Ack) ? (ack_cnt == 3'd1) : 1'b0;
 
     // ---------------------------------------
-    // Process & LED
+    // Synchronizer
+    // ---------------------------------------
+    logic req_si, req_s;
+    always_ff @(posedge clk) begin
+        req_si <= Request;
+        req_s  <= req_si;
+    end
+
+    // ---------------------------------------
+    // Data Register
     // ---------------------------------------
     logic [3:0] data_reg;
     always_ff @(posedge clk) begin
         if (rst) begin
             data_reg <= 4'd0;
-        end else if (state == Init && Request) begin
+        end else if (state == Init && req_s) begin
             data_reg <= Data;
         end
     end
 
+    // ---------------------------------------
+    // Process & LED
+    // ---------------------------------------
     always_comb begin
         case (state)
             Ack: begin
@@ -85,7 +97,7 @@ module lab6_practice_slave #(
     always_comb begin
         case (state)
             Init: begin
-                if (Request) begin
+                if (req_s) begin
                     next_state = Ack;
                 end else begin
                     next_state = Init;
