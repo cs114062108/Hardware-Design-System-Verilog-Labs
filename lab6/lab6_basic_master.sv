@@ -1,10 +1,12 @@
-module lab6_basic_master (
-	input logic clk,
-	input logic rst,
-	input logic start_btn,
-	input logic [2:0] sw, // switches
-	input logic submit,
-    input logic [2:0] num,
+module lab6_basic_master #(
+    parameter COUNT = 200_000_000
+) (
+	input  logic clk,
+	input  logic rst,
+	input  logic start_btn,
+	input  logic [2:0] sw, // switches
+	input  logic submit,
+    input  logic [2:0] num,
 
 	output logic start,
 	output logic [1:0] result,
@@ -17,7 +19,7 @@ module lab6_basic_master (
     localparam INIT_STATE = 2'b00;
     localparam GAME_STATE = 2'b01;
     localparam LOSE_STATE = 2'b10;
-    localparam WIN_STATE = 2'b11;
+    localparam WIN_STATE  = 2'b11;
 
     always_ff @(posedge clk) begin
         if (rst) begin
@@ -35,7 +37,7 @@ module lab6_basic_master (
     assign ack_rst = rst || !ack_enable;
 
     timer #(
-        .COUNT(200_000_000)
+        .COUNT(COUNT)
     ) two_second_timer (
         .clk(clk),
         .rst(ack_rst),
@@ -55,7 +57,7 @@ module lab6_basic_master (
     always_ff @(posedge clk) begin
         if (rst) begin
             num_reg <= 3'd0;
-        end else begin
+        end else if (submit_s) begin
             num_reg <= num;
         end
     end
@@ -140,6 +142,7 @@ module lab6_basic_master (
         // TODO: set `ACK` according to state
         case (state)
             LOSE_STATE: ACK = 1'b1;
+            WIN_STATE: ACK = 1'b1;
             default: ACK = 1'b0;
         endcase
     end

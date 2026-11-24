@@ -26,6 +26,29 @@
 | <div align="center">Vivado (Testbench Fail: request too early)</div> |
 | ![lab6_pra_vvd_2_fail.png](waveforms/lab6_pra/lab6_pra_vvd_2_fail.png) |
 
+## Lab6 Basic:
+### Straight from lab (69/100)
+> [!WARNING]Fatal Mistake
+> Master's state `WIN_STATE` is not implemented to raise `ACK`, so Slave gets stuck as state `WAIT_STATE`
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| ![lab6_basic_gtk_0.png](waveforms/lab6_basic/lab6_basic_gtk_0.png) |
+| <div align="center">Vivado</div> |
+| ![lab6_basic_vvd_0.png](waveforms/lab6_basic/lab6_basic_vvd_0.png) |
+
+### Fixed, I guess
+> [!IMPORTANT]Important Note
+> Slave should register `result` or something may go wrong
+
+| <div align="center">Waveform</div> |
+| --- |
+| <div align="center">gtkwave</div> |
+| ![lab6_basic_gtk_1.png](waveforms/lab6_basic/lab6_basic_gtk_1.png) |
+| <div align="center">Vivado</div> |
+| ![lab6_basic_vvd_1.png](waveforms/lab6_basic/lab6_basic_vvd_1.png) |
+
 ## Midterm 1
 ### Straight from lab
 | ExamA | ExamB | ExamC | Total |

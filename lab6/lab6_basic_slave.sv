@@ -31,6 +31,7 @@ module lab6_basic_slave(
         end
     end
 
+    // Synchronize
     logic ack_si, ack_s;
     always_ff @(posedge clk) begin
         if (rst) begin
@@ -42,6 +43,19 @@ module lab6_basic_slave(
         end    
     end
 
+    localparam LSR = 2'd0;
+    localparam EQU = 2'd1;
+    localparam GTR = 2'd2;
+
+    // register result
+    logic [1:0] result_reg;
+    always_ff @(posedge clk) begin
+        if (rst) begin
+            result_reg <= 2'd0;
+        end else if (ack_s && state == WAIT_STATE) begin
+            result_reg <= result;
+        end
+    end
 
     always_comb begin
         // TODO: set `next_state`
@@ -72,7 +86,7 @@ module lab6_basic_slave(
 
             SHOW_STATE: begin
                 if (!ack_s) begin
-                    if (result == 2'd1) begin
+                    if (result_reg == EQU) begin
                         next_state = INIT_STATE;
                     end else begin
                         next_state = GUESS_STATE;
@@ -101,41 +115,32 @@ module lab6_basic_slave(
                 submit = 1'b0;
             end
         endcase
-        
-
     end
 
     always_comb begin //next_state next_num
         // TODO: set `next_num`
-        case(state)
+        case (state)
             INIT_STATE: begin
                 next_num = 3'd0;
             end
+            
             GUESS_STATE:begin
                 next_num = sw;
             end
+            
             WAIT_STATE:begin
                 next_num = next_num;
             end
+            
             SHOW_STATE:begin
                 next_num = next_num;
             end
+
             default:begin
                 next_num = 3'd0;
             end
-
         endcase
 
-    end
-
-    // register result
-    logic [1:0] result_reg;
-    always_ff @(posedge clk) begin
-        if (rst) begin
-            result_reg <= 2'd0;
-        end else if (ack_s) begin
-            result_reg <= result;
-        end
     end
 
     always_comb begin
@@ -154,10 +159,18 @@ module lab6_basic_slave(
             end
 
             SHOW_STATE: begin
-                if (result == 2'd0) led = 3'b001;
-                else if (result == 2'd1) led = 3'b010;
-                else if (result == 2'd2) led =3'b100;
+                /*
+                if (result == LSR) led = 3'b001;
+                else if (result == EQU) led = 3'b010;
+                else if (result == GTR) led = 3'b100;
                 else led = 3'b000;
+                */
+                case (result_reg)
+                    LSR: led = 3'b001;
+                    EQU: led = 3'b010;
+                    GTR: led = 3'b100;
+                    default: led = 3'b000;
+                endcase
             end
 
             default: begin
